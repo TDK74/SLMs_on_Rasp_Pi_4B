@@ -1,0 +1,110 @@
+# Create a working folder in home directory:
+mkdir SLMs
+
+
+# Change to the working directory:
+cd SLMs
+
+
+# Install and check for the version of Ollama:
+sudo apt install curl		# if is not installed
+curl -sSL https://ollama.ai/install.sh | sudo bash
+systemctl status ollama		# CTRL+C to exit
+ollama --version
+
+
+# Check for available commands for Ollama:
+ollama --help
+Large language model runner
+
+Usage:
+  ollama [flags]
+  ollama [command]
+
+Available Commands:
+  serve       Start ollama
+  create      Create a model from a Modelfile
+  show        Show information for a model
+  run         Run a model
+  stop        Stop a running model
+  pull        Pull a model from a registry
+  push        Push a model to a registry
+  list        List models
+  ps          List running models
+  cp          Copy a model
+  rm          Remove a model
+  help        Help about any command
+
+Flags:
+  -h, --help      help for ollama
+  -v, --version   Show version information
+
+Use "ollama [command] --help" for more information about a command.
+
+
+# Run ollama manually and the desired slm model from the working folder
+# Might/will download the model at the default location
+sudo ollama run gemma2:2b	# https://registry.ollama.ai/v2/library/gemma2/manifests/2b
+sudo ollama run phi3.5:3.8b
+sudo ollama run qwen2.5:0.5b
+...
+
+
+# Check for available commands after running of the model:
+>>> /?
+Available Commands:
+  /set            Set session variables
+  /show           Show model information
+  /load <model>   Load a session or model
+  /save <model>   Save your current session
+  /clear          Clear session context
+  /bye            Exit
+  /?, /help       Help for a command
+  /? shortcuts    Help for keyboard shortcuts
+
+Use """ to begin a multi-line message.
+
+
+# To measure response time etc.
+/set verbose
+
+
+# Enter any prompt messages:
+Hi, can you give more info about you?	# for instance
+
+
+# Use /bye or Ctrl+d to exit the model
+/bye
+
+
+# Create a virtual environment:
+python3 -m venv slmpy39
+
+
+# Activate the virtual environment:
+source slmpy39/bin/activate
+
+
+# Upgrade pip in the virtual environment and check the version:
+pip install --upgrade pip
+pip --version
+
+
+# Check for installed packages in the virtual environment:
+pip list
+
+
+# Install autoremove if not present in the virtual environment:
+pip install pip-autoremove
+
+
+# Upgrade/install ollama in the virtual environment:
+pip install --upgrade ollama
+
+
+# List the installed packages and save them in a file,
+if everything works properly:
+(the file could be use afterwars as requirements.txt)
+pip freeze > packages_date_1.txt (or pip_freeze_date_1.txt)
+
+
