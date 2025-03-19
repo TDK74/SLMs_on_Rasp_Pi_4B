@@ -16,7 +16,7 @@ There were no Python script examples, but I created several, so that I could dow
 * OS type: 64-bit
 * Software: Python 3.9.2 (same in the workspace)
 * Environment: slmpy39 (virtual env)
-* SL models: only qwen2.5-0.5b-q4 (small enough). Unfortunately, I was not able to download, run and utilize gemma2-2b-q4, mistral-7B-q4, phi3.5-3.8b-q4. :(
+* SLModels: only qwen2.5-0.5b-q4 (small enough). Unfortunately, I was not able to download, run and utilize gemma2-2b-q4, mistral-7B-q4, phi3.5-3.8b-q4. :(
 
 See **_commands.txt_** and **_pip_freeze.txt_** for more details if interested.
 
